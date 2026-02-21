@@ -1,4 +1,5 @@
 import { Character } from "@/utils/interfaces";
+import axios from "axios";
 
 const API_BASE = "https://swapi.py4e.com/api";
 const CACHE_TTL = 3600000;
@@ -104,9 +105,8 @@ export async function fetchRelatedData(
 
 export async function fetchCharacters(page: number = 1): Promise<{ characters: Character[]; count: number }> {
   try {
-    const response = await fetch(`${API_BASE}/people/?page=${page}`);
-    if (!response.ok) throw new Error("Failed to fetch characters");
-    const data = await response.json();
+    const response = await axios.get(`${API_BASE}/people/?page=${page}`);
+    const data = response.data;
     const characters = await fetchRelatedData(data.results);
     return { characters, count: data.count };
   } catch (error) {
