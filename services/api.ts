@@ -28,12 +28,9 @@ async function fetchUrl<T>(url: string): Promise<T | null> {
   if (pendingRequests.has(url)) {
     return pendingRequests.get(url) as Promise<T>;
   }
-  const request = fetch(url)
+  const request = axios.get<T>(url)
     .then((res) => {
-      if (!res.ok) throw new Error("Fetch failed");
-      return res.json();
-    })
-    .then((data) => {
+      const data = res.data;
       cache.set(url, { data, timestamp: Date.now() });
       return data;
     })
