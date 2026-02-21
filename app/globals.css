@@ -1,26 +1,210 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+.page-container {
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.page-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-content-list {
+  padding: 0 20px 20px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.toolbar-spacer {
+  flex: 1;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar-border {
+  border-bottom: 1px solid #e0e0e0 !important;
+}
+
+.pagination-page-text {
+  min-width: 80px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.pagination-bottom {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+  gap: 12px;
+  position: relative;
+}
+
+.card-add-to-list-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: #1976d2;
+}
+
+.card-avatar {
+  width: 64px;
+  height: 64px;
+  background-color: #1976d2;
+  font-size: 1.5rem;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.card-checkbox {
+  padding: 8px;
+  margin-top: -8px;
+  align-self: flex-start;
+}
+
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  overflow: hidden;
+  justify-content: "space-between";
+  align-items: "center";
+}
+
+.name-box {
+  display: "flex";
+  align-items: "center";
+  gap: 1;
+  flex: 1;
+}
+
+.card-title {
+  min-width: fit-content;
+  font-weight: 700;
+}
+
+.card-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 0.875rem;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.card-bio {
+  color: #666;
+  font-style: italic;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.card-grid-item {
+  min-width: 0;
+}
+
+.card-grid-label {
+  font-weight: 700;
+  color: #999;
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.card-field-more {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.card-show-more-btn {
+  text-transform: none;
+  color: #1976d2;
+  font-weight: 600;
+  padding: 4px 0;
+  border: none;
+}
+
+.card-updated-time {
+  color: #999;
+  font-size: 0.75rem;
+}
+
+.card-expanded {
+  margin-top: 12px;
+  padding: 16px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card-expanded-title {
+  font-weight: 700;
+}
+
+.card-expanded-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.text-bold {
+  font-weight: 700;
 }
